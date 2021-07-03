@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication2</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header id="inicio" class="masthead">
+        <!-- Barra navegacion -->
+        <nav class="navbar navbar-expand-md container-fluid py-2n navbar-light" id="navBarra">
+            <div>
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-shopping-cart fa-2x"></i>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse text-center text-uppercase" id="navbarTogglerDemo01">
+                <div class="navbar-nav  mx-auto">
+                    <a href="index.html" class="navbar-item nav-link">Inicio</a>
+                    <a href="#galeria" class="navbar-item nav-link">Galeria</a>
+                    <a href="#servicios" class="navbar-item nav-link">Servicios</a>
+                    <a href="#contactanos" class="navbar-item nav-link">Contacto</a>
+                    <a href="#nosotros" class="navbar-item nav-link">Nosotros</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center text-center">
+                <div class="col-sm-8 col-md-8 col-lg-12 col-xl-12 align-self-end">
+                    <h1 class="text-uppercase font-weight-bold display-3">te ayudamos a elegir tu nueva billetera</h1>
+                    <hr class="divisor my-4">
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 align-self-start my-3" id="parrafo-inicio">
+                    <p class=" font-weight.light mb-5 text-uppercase">Bienvenidos a DOTA la tienda lider del mercado. Los mejores productos y al mejor precio.</p>
+                    <a href="#" class="text-uppercase" id="boton-header">ofertas</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="pie-pagina text-secondary">
+        <div class="pie-pagina-caja container">
+            <div class="row text-uppercase">
+
+                <div class="redes-sociales col-sm-12 col-md-12 col-lg-6 col-xl-6 py-5">
+                    <h3 class="text-uppercase py-2">redes sociales</h3>
+                    <p class="text-lowercase">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates id tempore nostrum eligendi sit temporibus: </p>
+                    <div class="text-center">
+                        <a href="#" class="redes-sociales-item mx-3"><i class="fab fa-facebook-square fa-3x"></i></a>
+                        <a href="#" class="redes-sociales-item mx-3"><i class="fab fa-discord fa-3x"></i></a>
+                        <a href="#" class="redes-sociales-item mx-3"><i class="fab fa-instagram fa-3x"></i></a>
+                        <a href="#" class="redes-sociales-item mx-3"><i class="fab fa-twitter fa-3x"></i></a>
+                    </div>
+                </div>
+
+                <div class="pie-pagina-productos col-sm-6 col-md-6 col-lg-3 col-xl-3 py-5">
+                    <h3 class="text-uppercase py-2">nuevos productos</h3>
+                    <ul class="lista-footer">
+                        <li><a href="#">nuestra seleccion</a></li>
+                        <li><a href="#">la nueva moda</a></li>
+                        <li><a href="#">accesorios mujeres </a></li>
+                        <li><a href="#">accesorios hombres</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 py-5">
+                    <h3 class="text-uppercase py-2">sitios de interes</h3>
+                    <ul class="lista-ayuda text-uppercase">
+                        <a href="#">
+                            <li class="item-ayuda">politica y privacidad</li>
+                        </a>
+                        <a href="#">
+                            <li class="item-ayuda">politica de cookies</li>
+                        </a>
+                        <a href="#">
+                            <li class="item-ayuda">terminos y condiciones</li>
+                        </a>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <hr class="w-50 mx-auto">
+        <div class="copyright row text-center">
+            <div class="col">
+                <p>Todos los Derechos Reservados © Template Diseño Moreno Santiago 2021</p>
+                <small>Sitio web creado con Bootstrap diseño responsivo con ilustraciones de Stories de Freepik y Fontawesome.</small>
+            </div>
+        </div>
+    </footer>   
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

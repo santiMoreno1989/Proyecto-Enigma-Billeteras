@@ -1,0 +1,232 @@
+﻿body {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.navbar {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    width: 100%;
+    font-weight: bold;
+}
+
+    .navbar button {
+        border-color: red;
+    }
+
+    .navbar i {
+        color: grey;
+    }
+
+.navbar-item, .navbar-brand {
+    padding: 1rem;
+    color: #e6b31e !important;
+    text-shadow: 0.5px 0.5px black;
+}
+
+    .navbar-item:hover {
+        background-color: transparent;
+        text-decoration: underline;
+    }
+
+.masthead {
+    height: 900px;
+    background: url('./imagenes/img-header-4.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+    .masthead h1 {
+        color: #f7f7f7;
+        text-shadow: 1px 1px black;
+    }
+
+    .masthead p {
+        font-size: 1.4rem;
+        color: black;
+        color: #f7f7f7;
+        color: lightgray;
+        text-shadow: 0.5px 0.5px black;
+    }
+
+.divisor {
+    width: 20%;
+    padding: 3px;
+    color: #ffe05d;
+    margin: auto;
+}
+
+#boton-header, .seccion-oferta a {
+    font-size: 22px;
+    color: white;
+    background-color: #e6b31e;
+    border-radius: 10px;
+    padding: 15px 30px;
+    text-decoration: none;
+}
+
+    #boton-header:hover {
+        color: white;
+        background-color: #ffc60b;
+    }
+/* SECCION OFERTA */
+.seccion-oferta {
+    color: #e6b31e;
+    height: 610px;
+}
+
+#box-ofertas {
+    padding: 0 !important;
+}
+
+.imagen-ofertas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+.seccion-oferta a:hover {
+    color: white;
+    background-color: #ffc60b;
+}
+
+.seccion-oferta hr, .separador-servicios {
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffc60b;
+}
+
+.seccion-galeria div {
+    padding: 0 !important;
+}
+
+.imagen-galeria {
+    height: 310px;
+}
+
+.box-servicios {
+    padding: 0px;
+    margin: 0;
+}
+
+#servicios p {
+    color: darkgrey;
+    text-align: center;
+}
+
+#servicios h4 {
+    text-align: center;
+    color: #e6b31e;
+}
+
+.servicios-titulo {
+    color: #e6b31e;
+}
+
+.fas, .fab, .far {
+    color: darkgray;
+}
+
+.carrito {
+    color: lightgray;
+}
+
+#contactanos {
+    color: #e6b31e;
+    background-color: #f7f7f7;
+}
+
+.submit {
+    background-color: #198754;
+    background-color: #e6b31e;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+}
+
+    .submit:hover {
+        color: white;
+        background-color: #ffc60b;
+    }
+
+.texto-oculto {
+    color: darkgrey;
+    display: none;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+/* FOOTER */
+.pie-pagina {
+    background-color: black;
+}
+
+.pie-pagina-caja {
+    text-align: start;
+}
+
+.copyright {
+    font-size: 15px;
+    padding-bottom: 15px;
+    margin: 0 5px;
+}
+
+.pie-pagina-caja h3 {
+    font-size: 1.7rem;
+    color: gray;
+}
+
+.lista-footer, .lista-ayuda {
+    list-style: none;
+    padding: 0px;
+}
+
+    .lista-footer li, .item-ayuda {
+        margin: 0px;
+    }
+
+    .lista-footer a, .redes-sociales, .lista-ayuda a {
+        text-decoration: none;
+        color: lightgrey;
+        list-style: none;
+    }
+
+        .lista-footer a:hover, .lista-ayuda a:hover {
+            text-decoration: underline;
+            color: gray;
+        }
+
+        .redes-sociales p {
+            font-size: 0.9rem;
+        }
+
+        .redes-sociales i {
+            color: gray;
+            margin-top: 1rem;
+        }
+
+            .redes-sociales i:hover {
+                color: white;
+            }
+
+#nosotros {
+    color: #e6b31e;
+}
+
+    #nosotros h3, p {
+        color: darkgray;
+    }
+
+    #nosotros img {
+        box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+    }
