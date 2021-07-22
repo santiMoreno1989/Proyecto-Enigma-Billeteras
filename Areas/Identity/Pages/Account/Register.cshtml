@@ -1,0 +1,90 @@
+﻿@page 
+@model RegisterModel
+@{
+    ViewData["Title"] = "Crear una nueva cuenta";
+}
+
+<h1 class="text-center py-2">@ViewData["Title"]</h1>
+
+<div class="row d-flex justify-content-center align-items-center flex-column text-lowercase" >
+    <hr class="divisor" />
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Input.nombre"></label>
+                <input asp-for="Input.nombre" class="form-control" />
+                <span asp-validation-for="Input.nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.apellido"></label>
+                <input asp-for="Input.apellido" class="form-control" />
+                <span asp-validation-for="Input.apellido" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Input.dni"></label>
+                <input asp-for="Input.dni" class="form-control" />
+                <span asp-validation-for="Input.dni" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Input.UserName"></label>
+                <input asp-for="Input.UserName" class="form-control" />
+                <span asp-validation-for="Input.UserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" class="form-control" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Password">Contraseña</label>
+                <input asp-for="Input.Password" class="form-control" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.ConfirmPassword">Confirmar contraseña</label>
+                <input asp-for="Input.ConfirmPassword" class="form-control" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="text-end py-3">
+
+                <button type="submit" class="btn btn-warning text-light p-2 text-uppercase">Registrarse</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6 col-md-offset-2 d-none">
+        <section>
+            <h4>Use another service to register.</h4>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                            for details on setting up this ASP.NET application to support logging in via external services.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

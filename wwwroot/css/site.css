@@ -34,7 +34,7 @@
 
 .masthead {
     height: 900px;
-    background: url('./imagenes/img-header-4.jpg');
+    background-image : url('../imagenes/img-header-4.jpg');
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -77,32 +77,30 @@
 /* SECCION OFERTA */
 .seccion-oferta {
     color: #e6b31e;
-    height: 610px;
+    height: auto;
+    padding: 1rem 0;
+    position: relative;
 }
-
-#box-ofertas {
-    padding: 0 !important;
+.seccion-oferta img{
+    border-radius: 0.5rem;
 }
-
-.imagen-ofertas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 0 !important;
+.box-precio {
+    border-radius: 0.5rem;
+    color: floralwhite;
+    background-color: #e6b31e;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
 }
-
-.seccion-oferta a:hover {
-    color: white;
-    background-color: #ffc60b;
-}
-
 .seccion-oferta hr, .separador-servicios {
     width: 20%;
     margin-left: auto;
     margin-right: auto;
     color: #ffc60b;
+    padding: 0.3rem;
+}
+.seccion-oferta hr{
+    width: 100%;
 }
 
 .seccion-galeria div {
@@ -112,9 +110,8 @@
 .imagen-galeria {
     height: 310px;
 }
-
 .box-servicios {
-    padding: 0px;
+    padding: 0 0.5rem;
     margin: 0;
 }
 
