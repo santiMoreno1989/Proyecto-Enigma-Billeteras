@@ -1,6 +1,7 @@
-﻿<!-- INICIO OFERTA -->
+﻿@model List<enigmaBilleteras.Models.billetera>
+<!-- INICIO OFERTA -->
 <section class="container-fluid seccion-oferta row">
-    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 pt-3">        
+    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 pt-3">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -23,9 +24,9 @@
     <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
         <h2 class="display-4">Kaizen Nordica</h2>
         <h5>Lo viejo se encuentra con lo nuevo</h5>
-        <hr/ class="w-100">
+        <hr / class="w-100">
         <p>
-            Puede esperar sentir cuero genuino cada vez que busque su dinero en efectivo y no se preocupe si está lloviendo o si lo deja caer, el revestimiento de cera se encargará de los daños menores.<br/> <br/>
+            Puede esperar sentir cuero genuino cada vez que busque su dinero en efectivo y no se preocupe si está lloviendo o si lo deja caer, el revestimiento de cera se encargará de los daños menores.<br /> <br />
 
             Desde el exterior, se ve y se siente sofisticado, premium y simplemente atractivo en todos los sentidos. Luego, el interior de lo viejo se encuentra con lo nuevo, ya que le brindamos un lindo clip para billetes y botones geniales que hacen saltar sus tarjetas cuando las presiona. Mantenga su melena fuerte y su dinero seguro con esta fantástica billetera.
         </p>
@@ -38,93 +39,28 @@
 <!-- INICIO GALERIA -->
 <section id="galeria" class="seccion-galeria">
     <div class="container-fluid row mx-0">
+        @foreach (var item in Model)
+        {
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 bitcoins text-center my-1">
-            <img src="./imagenes/Dorian-Billetera.jpg" alt="" class="img-fluid imagen-galeria w-100">
-            <h4>Billetera Dorian O´Brown</h4>
-            <p>Marron y Negro</p>
-            <p class="text-success">$3.750</pclass="text-success">
+            @if (item.ImagenBilletera != null)
+            {
+                <img src="data:image/*;base64,@(Convert.ToBase64String(item.ImagenBilletera))" alt="" class="img-fluid imagen-galeria w-100">
+            }
+            else
+            {
+                <img src="" alt="" class="img-fluid imagen-galeria w-100">
+
+            }
+            <h4>@item.marca Marca</h4>
+            <p>@item.colorDisponible</p>
+            <p>@item.precio</p>
+            <p>@item.CalidadMaterial</p>
             <div class="text-center py-3">
 
                 <button class="btn btn-warning text-light p-2 text-uppercase">comprar</button>
             </div>
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 text-center my-1">
-            <img src="./imagenes/galeria/cartera-luces.jpg" alt="" class="img-fluid imagen-galeria w-100">
-            <h4>Billetera Dorian O´Brown</h4>
-            <p>Marron y Negro</p>
-            <p class="text-success">$3.750</p>
-            <div class="text-center py-3">
-
-                <button class="btn btn-warning text-light p-2 text-uppercase">comprar</button>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 text-center my-1">
-            <img src="./imagenes/galeria/Biz-Negro.jpg" alt="" class="img-fluid imagen-galeria w-100">
-            <h4>Billetera Dorian Biz</h4>
-            <p>Negro</p>
-            <p class="text-success">$4.990</p>
-            <div class="text-center py-3">
-
-                <button class="btn btn-warning text-light p-2 text-uppercase">comprar</button>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 text-center my-1">
-            <img src="./imagenes/galeria/dolares-2.jpg" alt="" class="img-fluid imagen-galeria w-100">
-            <h4>Billetera Dorian O´Brown</h4>
-            <p>Marron y Negro</p>
-            <p class="text-success">$3.750</p>
-            <div class="text-center py-3">
-
-                <button class="btn btn-warning text-light p-2 text-uppercase">comprar</button>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 text-center my-1">
-            <img src="./imagenes/galeria/euros.jpg" alt="" class="img-fluid imagen-galeria w-100">
-            <h4>Billetera Dorian O´Brown</h4>
-            <p>Marron y Negro</p>
-            <p class="text-success">$3.750</p>
-            <div class="text-center py-3">
-
-                <button class="btn btn-warning text-light p-2 text-uppercase">comprar</button>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 text-center my-1">
-            <img src="./imagenes/galeria/manos.jpg" alt="" class="img-fluid imagen-galeria w-100">
-            <h4>Billetera Dorian O´Brown</h4>
-            <p>Marron y Negro</p>
-            <p class="text-success">$3.750</p>
-            <div class="text-center py-3">
-                <button class="btn btn-warning text-light p-2 text-uppercase">comprar</button>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 text-center my-1">
-            <img src="./imagenes/billetera2.jpg" alt="" class="img-fluid imagen-galeria w-100">
-            <h4>Billetera Dorian O´Brown</h4>
-            <p>Marron y Negro</p>
-            <p class="text-success">$3.750</p>
-            <div class="text-center py-3">
-                <button class="btn btn-warning text-light p-2 text-uppercase">comprar</button>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 text-center my-1">
-            <img src="./imagenes/billetera3.jpg" alt="" class="img-fluid imagen-galeria w-100">
-            <h4>Billetera Dorian O´Brown</h4>
-            <p>Marron y Negro</p>
-            <p class="text-success">$3.750</p>
-            <div class="text-center py-3">
-
-                <button class="btn btn-warning text-light p-2 text-uppercase">comprar</button>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 d-sm-none d-md-none d-lg-block d-xl-block text-center my-1">
-            <img src="./imagenes/billetera4.jpg" alt="" class="img-fluid imagen-galeria w-100">
-            <h4>Billetera Dorian O´Brown</h4>
-            <p>Marron y Negro</p>
-            <p class="text-success">$3.750</p>
-            <div class="text-center py-3">
-                <button class="btn btn-warning text-light p-2 text-uppercase">comprar</button>
-            </div>
-        </div>
+        }
     </div>
 </section>
 

@@ -22,5 +22,8 @@ namespace enigmaBilleteras.Models
         public string colorDisponible { get; set; }
 
         public string CalidadMaterial { get; set; }
+
+        public byte[] ImagenBilletera { get; set; }
+
     }
 }

@@ -7,12 +7,15 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Data;
 using enigmaBilleteras.Models;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace enigmaBilleteras.Controllers
 {
     public class billeterasController : Controller
     {
         private readonly ApplicationDbContext _context;
+        //private object db;
 
         public billeterasController(ApplicationDbContext context)
         {
@@ -54,14 +57,27 @@ namespace enigmaBilleteras.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,marca,precio,colorDisponible,CalidadMaterial")] billetera billetera)
+        public async Task<IActionResult> 
+            Create([Bind("ID,marca,precio,colorDisponible,CalidadMaterial,ImagenBilletera")] billetera billetera )
         {
+
+
             if (ModelState.IsValid)
             {
+                if (Request.Form.Files.Count > 0)
+                {
+                    IFormFile file = Request.Form.Files.FirstOrDefault();
+                    using (var dataStream = new MemoryStream())
+                    {
+                        await file.CopyToAsync(dataStream);
+                        billetera.ImagenBilletera = dataStream.ToArray();
+                    }
+                }
                 _context.Add(billetera);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(billetera);
         }
 
