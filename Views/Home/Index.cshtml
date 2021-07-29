@@ -1,37 +1,24 @@
 ﻿@model List<enigmaBilleteras.Models.billetera>
 <!-- INICIO OFERTA -->
 <section class="container-fluid seccion-oferta row">
-    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 pt-3">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/imagenes/kaizenBilletera.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/imagenes/kaizenBilletera2.jpg" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-        <h2 class="display-4">Kaizen Nordica</h2>
-        <h5>Lo viejo se encuentra con lo nuevo</h5>
-        <hr / class="w-100">
-        <p>
-            Puede esperar sentir cuero genuino cada vez que busque su dinero en efectivo y no se preocupe si está lloviendo o si lo deja caer, el revestimiento de cera se encargará de los daños menores.<br /> <br />
+     <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 pt-3">
+        <img  src="~/imagenes/kaizenBilletera.jpg" class="img-fluid w-75"/>
+     </div>
 
-            Desde el exterior, se ve y se siente sofisticado, premium y simplemente atractivo en todos los sentidos. Luego, el interior de lo viejo se encuentra con lo nuevo, ya que le brindamos un lindo clip para billetes y botones geniales que hacen saltar sus tarjetas cuando las presiona. Mantenga su melena fuerte y su dinero seguro con esta fantástica billetera.
-        </p>
+    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+        <div>
+            <h2 class="display-4">Kaizen Nordica</h2>
+            <h5>Lo viejo se encuentra con lo nuevo</h5>
+            <hr / class="w-100">
+            <p>
+                Puede esperar sentir cuero genuino cada vez que busque su dinero en efectivo y no se preocupe si está lloviendo o si lo deja caer, el revestimiento de cera se encargará de los daños menores.<br /> <br />
+
+                Desde el exterior, se ve y se siente sofisticado, premium y simplemente atractivo en todos los sentidos. Luego, el interior de lo viejo se encuentra con lo nuevo, ya que le brindamos un lindo clip para billetes y botones geniales que hacen saltar sus tarjetas cuando las presiona. Mantenga su melena fuerte y su dinero seguro con esta fantástica billetera.
+            </p>
+        </div>
+        
         <div class="box-precio">
-            <button class="btn text-warning text-uppercase">comprar  $4.999</button>
+            <a href="" class="btn btn-warning text-white w-100"> comprar $ 4999</a>
         </div>
     </div>
 </section>
@@ -41,7 +28,7 @@
     <div class="container-fluid row mx-0">
         @foreach (var item in Model)
         {
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 bitcoins text-center my-1">
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 text-center my-1 text-uppercase">
             @if (item.ImagenBilletera != null)
             {
                 <img src="data:image/*;base64,@(Convert.ToBase64String(item.ImagenBilletera))" alt="" class="img-fluid imagen-galeria w-100">
@@ -51,13 +38,13 @@
                 <img src="" alt="" class="img-fluid imagen-galeria w-100">
 
             }
-            <h4>@item.marca Marca</h4>
+            <h4>@item.marca</h4>
             <p>@item.colorDisponible</p>
-            <p>@item.precio</p>
             <p>@item.CalidadMaterial</p>
+            <p class="text-info">$@item.precio</p>
             <div class="text-center py-3">
 
-                <button class="btn btn-warning text-light p-2 text-uppercase">comprar</button>
+                <button class="btn btn-warning text-light p-2 text-uppercase w-50">comprar</button>
             </div>
         </div>
         }
@@ -105,21 +92,20 @@
             <h2 class="display-4 my-5 text-center text-uppercase">contactanos</h2>
             <hr class="divisor my-4">
             <form action="#" method="POST">
+                
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" id="nombre" class="form-control" pattern="[a-z,A-Z]{1,30}">
-                <p class="form-text text-lowercase">Nunca compartiremos sus datos personales con nadie más.</p>
 
                 <label for="correo" class="form-label mt-3">Correo Electronico</label>
                 <input type="email" id="email" class="form-control">
 
                 <label for="telefono" class="form-label mt-3">Telefono</label>
                 <input type="tel" id="telefono" class="form-control" required pattern="[0-9]{5,15}">
+                
                 <label for="asunto" class="form-label mt-3">Asunto</label>
                 <input type="text" id="asunto" class="form-control mb-2">
                 <textarea name="texto" id="texto" cols="114" rows="7" class="w-100 border" placeholder="Escriba su mensaje aqui..."></textarea>
 
-                <input type="checkbox" id="checkbox" class="form-check-input">
-                <label for="echar un vistazo" class="form-check-label">Echar un vistazo</label><br>
                 <input type="submit" value="enviar" class="submit py-2 px-4 my-4"><span class="texto-oculto">Recuerde completar todos los campos antes de enviar</span>
             </form>
         </div>
