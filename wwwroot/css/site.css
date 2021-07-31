@@ -114,9 +114,6 @@
     padding: 0 !important;
 }
 
-.imagen-galeria {
-    height: 310px;
-}
 
 .box-servicios {
     padding: 0 0.5rem;
@@ -235,3 +232,13 @@
     #nosotros img {
         box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
     }
+    /* INICIAR SESION IDENTITY*/
+.iniciar-sesion{
+    height: 500px;
+    background-image: url('../imagenes/img-header-5.jpg');
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 1px 1px black;
+}

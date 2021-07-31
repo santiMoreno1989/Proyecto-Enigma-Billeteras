@@ -102,7 +102,7 @@ namespace enigmaBilleteras.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,marca,precio,colorDisponible,CalidadMaterial")] billetera billetera)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,marca,precio,colorDisponible,CalidadMaterial,ImagenBilletera")] billetera billetera)
         {
             if (id != billetera.ID)
             {
@@ -111,6 +111,16 @@ namespace enigmaBilleteras.Controllers
 
             if (ModelState.IsValid)
             {
+                if (Request.Form.Files.Count > 0)
+                {
+                    IFormFile file = Request.Form.Files.FirstOrDefault();
+                    using (var dataStream = new MemoryStream())
+                    {
+                        await file.CopyToAsync(dataStream);
+                        billetera.ImagenBilletera = dataStream.ToArray();
+                    }
+                }
+
                 try
                 {
                     _context.Update(billetera);
