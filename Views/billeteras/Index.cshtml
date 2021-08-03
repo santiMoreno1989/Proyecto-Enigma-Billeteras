@@ -6,14 +6,15 @@
 
 <h1>Inicio</h1>
 
-<p>
-    <a asp-action="Create" class="text-uppercase">Crear nueva billetera</a>
-</p>
+<div class="text-center py-4">
+    <a asp-action="Create" class="btn btn-outline-warning text-uppercase btn-lg">Crear nueva billetera</a>
+</div>
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.marca)
+
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.precio)
@@ -42,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.CalidadMaterial)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Borrar</a>
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-outline-primary">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-outline-success">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-outline-danger">Borrar</a>
             </td>
         </tr>
 }

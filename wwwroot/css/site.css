@@ -113,7 +113,9 @@
 .seccion-galeria div {
     padding: 0 !important;
 }
-
+.imagen-galeria{
+    height: 50%;
+}
 
 .box-servicios {
     padding: 0 0.5rem;
