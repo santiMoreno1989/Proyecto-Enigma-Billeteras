@@ -1,0 +1,28 @@
+﻿@model List<enigmaBilleteras.Models.billetera>
+
+
+    <div class="row mx-0">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 text-center my-1 text-uppercase">
+                @if (item.ImagenBilletera != null)
+                {
+                    <img src="data:image/*;base64,@(Convert.ToBase64String(item.ImagenBilletera))" alt="" class="img-fluid imagen-galeria w-100">
+                }
+                else
+                {
+                    <img src="/imagenes/image-not-found-1.jpg" alt="" class="img-fluid imagen-galeria w-100">
+
+                }
+                <h4>@item.marca</h4>
+                <p>@item.colorDisponible</p>
+                <p>@item.CalidadMaterial</p>
+                <p class="text-info">$@item.precio</p>
+                <div class="text-center py-3 d-flex flex-column justify-content-center align-items-center">
+
+                    <button class="btn btn-primary  btn-lg w-75 my-1">comprar</button>
+                    <button class="btn btn-success btn-lg w-75 my-1">agregar <i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+        }
+    </div>

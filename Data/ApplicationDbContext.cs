@@ -12,5 +12,6 @@ namespace WebApplication2.Data
         }
         public DbSet<billetera> billeteras { get; set; }
         public DbSet<miUsuario> usuarios { get; set; }
+        
     }
 }

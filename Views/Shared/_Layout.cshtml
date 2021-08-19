@@ -26,11 +26,11 @@
             </button>
             <div class="collapse navbar-collapse text-center text-uppercase" id="navbarTogglerDemo01">
                 <div class="navbar-nav  mx-auto">
-                    <a href="#inicio" class="navbar-item nav-link">Inicio</a>
-                    <a href="#galeria" class="navbar-item nav-link">Galeria</a>
-                    <a href="#servicios" class="navbar-item nav-link">Servicios</a>
-                    <a href="#contactanos" class="navbar-item nav-link">Contacto</a>
-                    <a href="#nosotros" class="navbar-item nav-link">Nosotros</a>
+                    <a asp-action="Index" class="navbar-item nav-link">Inicio</a>
+                    <a asp-action="_GaleriaPartial" class="navbar-item nav-link">Galeria</a>
+                    <a asp-action="#" class="navbar-item nav-link">Servicios</a>
+                    <a asp-action="#" class="navbar-item nav-link">Contacto</a>
+                    <a asp-action="#" class="navbar-item nav-link">Nosotros</a>
                 </div>
             </div>
             <partial name="_LoginPartial" />

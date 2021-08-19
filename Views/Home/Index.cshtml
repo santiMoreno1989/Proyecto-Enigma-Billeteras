@@ -1,70 +1,12 @@
 ﻿@model List<enigmaBilleteras.Models.billetera>
 <!-- INICIO OFERTA -->
 <section class="container-fluid seccion-oferta row">
-    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 pt-3">
-        @foreach (var elemento in Model)
-            @if (elemento.ID == 12)
-            {
-                @if (elemento.ImagenBilletera != null)
-                {
-                    <img src="data:image/*;base64,@(Convert.ToBase64String(elemento.ImagenBilletera))" alt="" class="img-fluid imagen-galeria w-100">
-                }
-                else
-                {
-                    <img src="/imagenes/image-not-found-1.jpg" alt="" class="img-fluid imagen-galeria w-100">
-
-                }
-                
-                <div class="box-precio">
-                    <a href="" class="btn btn-warning text-white w-100 my-3">@elemento.precio</a>
-                </div>
-
-            }
-        </div>
-
-    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-        <div>
-            <h2 class="display-4">Kaizen Nordica</h2>
-            <h5>Lo viejo se encuentra con lo nuevo</h5>
-            <hr  class="w-100" />
-            <p>
-                Puede esperar sentir cuero genuino cada vez que busque su dinero en efectivo y no se preocupe si está lloviendo o si lo deja caer, el revestimiento de cera se encargará de los daños menores.<br /> <br />
-
-                Desde el exterior, se ve y se siente sofisticado, premium y simplemente atractivo en todos los sentidos. Luego, el interior de lo viejo se encuentra con lo nuevo, ya que le brindamos un lindo clip para billetes y botones geniales que hacen saltar sus tarjetas cuando las presiona. Mantenga su melena fuerte y su dinero seguro con esta fantástica billetera.
-            </p>
-        </div>
-        
-        
-    </div>
+   <partial name="_OfertaPartial" />
 </section>
 
 <!-- INICIO GALERIA -->
 <section id="galeria" class="container-fluid seccion-galeria">
-    <div class="row mx-0">
-        @foreach (var item in Model)
-        {
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 text-center my-1 text-uppercase">
-            @if (item.ImagenBilletera != null)
-            {
-                <img src="data:image/*;base64,@(Convert.ToBase64String(item.ImagenBilletera))" alt="" class="img-fluid imagen-galeria w-100">
-            }
-            else
-            {
-                <img src="/imagenes/image-not-found-1.jpg" alt="" class="img-fluid imagen-galeria w-100">
-
-            }
-            <h4>@item.marca</h4>
-            <p>@item.colorDisponible</p>
-            <p>@item.CalidadMaterial</p>
-            <p class="text-info">$@item.precio</p>
-            <div class="text-center py-3 d-flex flex-column justify-content-center align-items-center">
-
-                <button class="btn btn-primary  btn-lg w-75 my-1">comprar</button>
-                <button class="btn btn-success btn-lg w-75 my-1">agregar <i class="fas fa-shopping-cart"></i></button>
-            </div>
-        </div>
-        }
-    </div>
+  <partial name="_GaleriaPartial" />
 </section>
 
 <!-- INICIO SECCION SERVICIOS -->
